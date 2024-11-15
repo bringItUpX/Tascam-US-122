@@ -1,0 +1,4 @@
+BUS=="usb", ACTION=="add", SYSFS{idProduct}=="8006", SYSFS{idVendor}=="1604", RUN+="/bin/bash -c '/sbin/fxload -D %N -s /lib/firmware/usx2yloader/tascam_loader.ihx -I /lib/firmware/usx2yloader/us122fw.ihx'"
+#BUS=="usb", ACTION=="add", SYSFS{idProduct}=="8007", SYSFS{idVendor}=="1604", RUN+="/bin/bash -c '/usr/bin/usx2yloader'"
+SUBSYSTEM=="sound", ACTION=="add", ATTR{id}=="USX2Y", RUN+="/bin/bash -c '/usr/bin/usx2yloader'"
+ 
